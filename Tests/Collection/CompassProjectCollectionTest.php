@@ -45,6 +45,7 @@ class CompassProjectCollectionTest extends \PHPUnit_Framework_TestCase
     private function getTempPathName()
     {
         $tempDir = realpath(sys_get_temp_dir()).'compass_elephant_'.md5(uniqid(rand(),1));
+        mkdir($tempDir);
         $tempName = tempnam($tempDir, 'compass_elephant');
         unlink($tempName);
         mkdir($tempName);

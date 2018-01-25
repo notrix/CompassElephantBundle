@@ -1,10 +1,10 @@
 {
-    "name": "cypresslab/compass-elephant-bundle",
+    "name": "notrix/compass-elephant-bundle",
     "description": "Integrates CompassElephant into Symfony2",
     "keywords": ["compass", "sass", "css", "scss", "assets"],
     "homepage": "https://github.com/matteosister/CompassElephantBundle",
     "type": "symfony-bundle",
-    "license": "LGPL-3.0+",
+    "license": "LGPL-3.0-or-later",
     "authors": [
         {
             "name": "Matteo Giachino",
@@ -12,20 +12,20 @@
         }
     ],
     "require": {
-        "php": ">=5.3.0",
-        "cypresslab/compass-elephant": "0.2.*",
-        "symfony/http-kernel": "~2.3",
-        "symfony/framework-bundle": "~2.3",
-        "symfony/Console": "~2.3"
+        "php": ">=5.6.0",
+        "notrix/compass-elephant": "dev-master",
+        "symfony/http-kernel": "~2.3|~3.0",
+        "symfony/framework-bundle": "~2.3|~3.0",
+        "symfony/console": "~2.3|~3.0"
     },
     "autoload": {
-        "psr-0": {
-            "Cypress\\CompassElephantBundle": ""
+        "psr-4": {
+            "Cypress\\CompassElephantBundle\\": ""
         }
     },
     "minimum-stability": "stable",
     "target-dir": "Cypress/CompassElephantBundle",
     "require-dev": {
-        "phpunit/phpunit": "~4.3"
+        "phpunit/phpunit": "~4.3|~5.0"
     }
 }

@@ -10,10 +10,7 @@
 namespace Cypress\CompassElephantBundle\Collection;
 
 use CompassElephant\CompassProject;
-use CompassElephant\CommandCaller;
 use CompassElephant\CompassBinary;
-use CompassElephant\StalenessChecker\FinderStalenessChecker;
-use CompassElephant\StalenessChecker\NativeStalenessChecker;
 
 class CompassProjectCollection implements \ArrayAccess, \Iterator, \Countable
 {
@@ -25,19 +22,17 @@ class CompassProjectCollection implements \ArrayAccess, \Iterator, \Countable
      * class constructor
      *
      * @param \CompassElephant\CompassBinary $binary   a CompassBinary instance
-     * @param                                $projects an array of projects configuration
+     * @param array                          $projects an array of projects configuration
      */
     public function __construct(CompassBinary $binary, $projects)
     {
         $this->binary = $binary;
         $this->position = 0;
         foreach ($projects as $name => $data) {
-            $stalenessChecker = new FinderStalenessChecker($data['path'], $data['config_file']);
             $project = new CompassProject(
                 $data['path'],
                 $name,
                 $this->binary,
-                $stalenessChecker,
                 $data['config_file'],
                 $data['auto_init']
             );

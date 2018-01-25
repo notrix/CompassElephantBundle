@@ -3,7 +3,7 @@
  * User: matteo
  * Date: 11/12/12
  * Time: 12.49
- * 
+ *
  * Just for fun...
  */
 
@@ -93,5 +93,13 @@ class CompassDataCollector extends DataCollector
     public function getName()
     {
         return 'cypress_compass_elephant';
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function reset()
+    {
+        $this->data = [];
     }
 }
